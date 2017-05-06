@@ -1,8 +1,12 @@
 var http = require('http');
-
+var moduleOne = require('./moduleOne');
+var moduleTwo = require('./moduletwo');
+  
 function onRequest(request, response){
   response.writeHead(200,{'Content-Type': 'text/plain'});
-  response.write('hello world');
+  response.write(moduleTwo.myVariable);
+  moduleOne.myFunction();
+  moduleTwo.myFunction();
   response.end();
 
 }
