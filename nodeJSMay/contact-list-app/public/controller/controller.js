@@ -1,32 +1,35 @@
+// var myApp = angular.module('myApp', []);
+// myApp.controller('AppCtrl',function($scope, $http){
+//   console.log('hello world from the control room');
+
+// $http.get('/contactList').then(successCallBack, errorCallBack);
+
+// function succesCallBack(response){
+//   console.log('I got the data I requested');
+//   $scope.contactList = response
+// }
+
+
+
 var myApp = angular.module('myApp', []);
 myApp.controller('AppCtrl', ['$scope', '$http',
 
 function($scope, $http){
   console.log('hello world from the control room');
-  
 
-    personOne = {
-      name: 'adriana',
-      email: 'adriana@bob.com',
-      number: '111111111'
-    };
+// $http.get('/contactList').success(function(response){
+//   console.log('I got the data I requested');
+//   $scope.contactList = response
+// })
 
-    personTwo = {
-      name: 'Snoppy',
-      email: 'snoopy@bob.com',
-      number: '5555111111'
-    };
+$http.get('/contactList').then(successCallBack, errorCallBack);
 
-    personThree = {
-      name: 'kelly',
-      email: 'kelly@bob.com',
-      number: '77777777'
-    };
+function succesCallBack(response){
+  console.log('I got the data I requested');
+  $scope.contactList = response
+}
 
 
 
-var contactList= [personOne, personTwo, personThree];
-
-$scope.contactList = contactList;
 
 }]);
