@@ -21,9 +21,16 @@
           <th>Name</th>
           <th>e-mail</th>
           <th>numbers</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
+        <tr>
+          <td><input type="form-control" ng-model='contact.name' name=""></td>
+          <td><input type="form-control" ng-model='contact.email' name=""></td>
+          <td><input type="form-control" ng-model='contact.number' name=""></td>
+          <td><button class='btn-primary' ng-click='addContact()'>Add Contact</button></td>
+        </tr>
         <tr ng-repeat='contact in contactList'>
         <td>{{contact.name}}</td>
         <td>{{contact.email}}</td>
