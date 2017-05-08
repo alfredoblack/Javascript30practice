@@ -23,7 +23,6 @@ var refresh = function(){
 refresh();
 
 
-
   $scope.addContact = function(){
    console.log($scope.contact);
    $http.post('/contactList', $scope.contact).then(function(response){
@@ -32,11 +31,13 @@ refresh();
    });
 
    refresh();
+
  }
 
- // var clearInput = function(){
- //  $scope.contact = null
- // }
+ $scope.removeContact = function(id){
+  console.log(id);
+  $http.delete('/contactList' + id);
+ }
 
 
 }]);
