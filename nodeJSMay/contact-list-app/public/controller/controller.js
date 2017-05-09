@@ -46,5 +46,15 @@ refresh();
   });
  }
 
+ $scope.update = function(){
+  console.log($scope.contact);
+  console.log($scope.contact._id);
+
+  $http.put('/contactList/' + $scope.contact._id, $scope.contact).then(function(response){
+    $scope.contact = response.data;
+    refresh();
+  });
+ }
+
 
 }]);
