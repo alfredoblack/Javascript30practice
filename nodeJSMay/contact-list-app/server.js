@@ -30,9 +30,20 @@ app.post('/contactList', function(req, res){
 })
 
 app.delete('/contactList/:id', function(req, res){
+  console.log('hellow this is delete');
+  // var id = req.params.id;
+  // console.log(id);
+  // db.contactList.remove({_id: mongojs.ObjectId(id)}, function(err, doc){
+  //   res.json(doc);
+  // })
+});
+
+app.get('/contactList/:id', function(req, res){
   var id = req.params.id;
   console.log(id);
-  db.contactList.remove(_id: mongojs.Object(id))
+  db.contactList.findOne({_id: mongojs.ObjectId(id)}, function(err,doc){
+    res.json(doc);
+  });
 })
 
 app.listen(3000);
