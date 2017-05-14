@@ -22,7 +22,7 @@
 
       }
     },
-
+<!-- 
      addOne : function(event){
         console.log(this.state.value);
       this.setState({
@@ -42,6 +42,12 @@
           this.setState({
             value: this.state.value +10
           })
+      }, -->
+      incrementalCount : function(value){
+        console.log(this)
+        this.setState({
+          value: this.state.value + value
+        })
       },
     render: function(){
       return(
@@ -49,9 +55,9 @@
        <div>
           <h1 className ='container'>Count : {this.state.value}</h1>
           <div className='container btn'>
-            <button className='btn blue-btn' onClick={this.addOne}>Add One</button>
-            <button className='btn green-btn' onClick={this.addFive}>Add Five</button>
-            <button className='btn purple-btn' onClick={this.addTen}>Add Ten</button>
+            <button className='btn blue-btn' onClick={this.incrementalCount.bind(this,1)}>Add One</button>
+            <button className='btn green-btn' onClick={this.incrementalCount.bind(this,5)}>Add Five</button>
+            <button className='btn purple-btn' onClick={this.incrementalCount.bind(this,10)}>Add Ten</button>
           </div>
        </div> 
       )
