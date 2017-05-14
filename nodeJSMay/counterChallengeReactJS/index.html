@@ -48,9 +48,11 @@
 
        <div>
           <h1 className ='container'>Count : {this.state.value}</h1>
-          <button className='btn blue-btn' onClick={this.addOne}>Add One</button>
-          <button onClick={this.addFive}>Add Five</button>
-          <button onClick={this.addTen}>Add Ten</button>
+          <div className='container btn'>
+            <button className='btn blue-btn' onClick={this.addOne}>Add One</button>
+            <button className='btn green-btn' onClick={this.addFive}>Add Five</button>
+            <button className='btn purple-btn' onClick={this.addTen}>Add Ten</button>
+          </div>
        </div> 
       )
 
