@@ -15,11 +15,25 @@
 <script type="text/babel">
   
   var Counter = React.createClass({
+
+    getDefaultProps : function(){
+      return{
+        value : 0
+      }
+    },
+
+
     render: function(){
+      let value = this.props.value;
+      console.log(this.props.value)
       return(
-       
-          <h1>Count</h1>
-        
+
+       <div>
+          <h1>Count: {value}</h1>
+          <button>Add One</button>
+          <button>Add Five</button>
+          <button>Add Ten</button>
+       </div> 
       )
 
     }
