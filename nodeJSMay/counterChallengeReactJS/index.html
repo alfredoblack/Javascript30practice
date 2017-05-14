@@ -16,23 +16,41 @@
   
   var Counter = React.createClass({
 
-    getDefaultProps : function(){
-      return{
-        value : 0
+    getInitialState : function(){
+      return {
+        value: 0,
+
       }
     },
 
+     addOne : function(event){
+        console.log(this.state.value);
+      this.setState({
+        value: this.state.value + 1
+      })
 
+    },
+
+      addFive: function(event){
+        this.setState({
+          value : this.state.value + 5
+        })
+      },
+
+      addTen : function(event){
+        console.log(this.state.value)
+          this.setState({
+            value: this.state.value +10
+          })
+      },
     render: function(){
-      let value = this.props.value;
-      console.log(this.props.value)
       return(
 
        <div>
-          <h1>Count: {value}</h1>
-          <button>Add One</button>
-          <button>Add Five</button>
-          <button>Add Ten</button>
+          <h1 className ='container'>Count : {this.state.value}</h1>
+          <button className='btn blue-btn' onClick={this.addOne}>Add One</button>
+          <button onClick={this.addFive}>Add Five</button>
+          <button onClick={this.addTen}>Add Ten</button>
        </div> 
       )
 
